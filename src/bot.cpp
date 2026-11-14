@@ -186,8 +186,7 @@ void Bot::autoclickFrame(GJBaseGameLayer* gl, int f) {
 }
 
 void Bot::applyTimeScale() {
-    float s = cfg.speedOn ? std::clamp(cfg.speed, 0.05f, 10.f) : 1.f;
-    CCDirector::get()->getScheduler()->setTimeScale(s);
+    // Speedhack is applied by the CCScheduler::update hook in main.cpp.
 }
 
 void Bot::refreshHud() {

@@ -345,6 +345,7 @@ protected:
             toggle(menu, "Safe mode (no clear)", {left, top - row}, c.safeMode, A_SAFE);
             toggle(menu, "Instant respawn", {left, top - row * 2}, c.instantRespawn, A_INSTANT);
             toggle(menu, "No death effect", {left, top - row * 3}, c.noDeathEffect, A_NODEATH);
+            stepper(menu, "Speed", {left, top - row * 4 - 6.f}, fmt::format("{:.1f}x", c.speed), A_SPEED_DEC, A_SPEED_INC);
 
             toggle(menu, "Speedhack", {x2, top}, c.speedOn, A_SPEEDON);
             toggle(menu, "TPS bypass", {x2, top - row}, c.tpsOn, A_TPSON);
@@ -357,8 +358,7 @@ protected:
             stepper(menu, "TPS", {left, top - row}, fmt::format("{:.0f}", c.tps), A_TPS_DEC, A_TPS_INC);
             stepper(menu, "Frame offset", {left, top - row * 2}, std::to_string(c.offset), A_OFF_DEC, A_OFF_INC);
 
-            toggle(menu, "Frame stepper", {left, top - row * 3 - 2.f}, c.stepper, A_STEPPER);
-            toggle(menu, "Autoclicker", {left + 150.f, top - row * 3 - 2.f}, c.autoclick, A_AUTOCLICK);
+            toggle(menu, "Autoclicker", {left, top - row * 3 - 2.f}, c.autoclick, A_AUTOCLICK);
             toggle(menu, "P1", {left + 290.f, top - row * 3 - 2.f}, c.acP1, A_ACP1);
 
             stepper(menu, "Click hold", {left, top - row * 4 - 4.f}, std::to_string(c.acHold), A_ACH_DEC, A_ACH_INC);
@@ -431,8 +431,8 @@ protected:
             case A_LOAD: LoadPopup::create()->show(); return;
             case A_CLEAR: b.macro.clear(); b.setState(BotState::None); break;
             case A_ACCURACY: c.accuracy = (c.accuracy + 1) % 3; break;
-            case A_SPEED_DEC: c.speed = std::max(0.05f, std::round((c.speed - 0.05f) * 100.f) / 100.f); b.applyTimeScale(); break;
-            case A_SPEED_INC: c.speed = std::min(10.f, std::round((c.speed + 0.05f) * 100.f) / 100.f); b.applyTimeScale(); break;
+            case A_SPEED_DEC: c.speed = std::max(0.1f, std::round((c.speed - 0.1f) * 10.f) / 10.f); b.applyTimeScale(); break;
+            case A_SPEED_INC: c.speed = std::min(10.f, std::round((c.speed + 0.1f) * 10.f) / 10.f); b.applyTimeScale(); break;
             case A_TPS_DEC: c.tps = std::max(1.f, c.tps - 10.f); break;
             case A_TPS_INC: c.tps = std::min(10000.f, c.tps + 10.f); break;
             case A_OFF_DEC: c.offset = std::max(-8, c.offset - 1); break;

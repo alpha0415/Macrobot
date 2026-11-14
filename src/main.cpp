@@ -107,8 +107,8 @@ class $modify(BotBaseLayer, GJBaseGameLayer) {
 // ---------------------------------------------------------------------------
 
 class $modify(BotPlayLayer, PlayLayer) {
-    bool init(GJGameLevel* level, bool useReplay, bool dontCreateObjects) {
-        if (!PlayLayer::init(level, useReplay, dontCreateObjects)) return false;
+    bool init(GJGameLevel* level, bool dontCreateObjects) {
+        if (!PlayLayer::init(level, dontCreateObjects)) return false;
 
         auto& b = Bot::get();
         b.setState(BotState::None);   // never start a run automatically; use the HUD button

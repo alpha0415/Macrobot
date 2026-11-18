@@ -9,7 +9,7 @@ project(MacroBotMobile VERSION 1.0.0)
 add_library(${PROJECT_NAME} SHARED
     src/fx_main.cpp
     src/fw_bot.cpp
-    src/fy_window.cpp
+    src/fz_window.cpp
     src/fw_ui.cpp
 )
 

@@ -7,11 +7,12 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 project(MacroBotMobile VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
-    src/gb_main.cpp
+    src/gh_main.cpp
     src/fw_bot.cpp
     src/ga_window.cpp
-    src/ge_ui.cpp
+    src/gh_ui.cpp
     src/ge_nong.cpp
+    src/gh_kb.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})

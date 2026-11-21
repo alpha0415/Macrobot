@@ -10,7 +10,7 @@ add_library(${PROJECT_NAME} SHARED
     src/gh_main.cpp
     src/fw_bot.cpp
     src/ga_window.cpp
-    src/gi_ui.cpp
+    src/gj_ui.cpp
     src/ge_nong.cpp
     src/gh_kb.cpp
 )

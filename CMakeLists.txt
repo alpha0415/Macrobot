@@ -10,7 +10,8 @@ add_library(${PROJECT_NAME} SHARED
     src/gb_main.cpp
     src/fw_bot.cpp
     src/ga_window.cpp
-    src/ga_ui.cpp
+    src/ge_ui.cpp
+    src/ge_nong.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})

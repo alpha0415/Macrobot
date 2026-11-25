@@ -8,7 +8,7 @@ project(MacroBotMobile VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
     src/gh_main.cpp
-    src/fw_bot.cpp
+    src/gm_bot.cpp
     src/ga_window.cpp
     src/gk_ui.cpp
     src/ge_nong.cpp

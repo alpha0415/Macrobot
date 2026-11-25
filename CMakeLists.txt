@@ -7,7 +7,7 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 project(MacroBotMobile VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
-    src/gh_main.cpp
+    src/gn_main.cpp
     src/gm_bot.cpp
     src/ga_window.cpp
     src/gk_ui.cpp
